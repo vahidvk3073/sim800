@@ -1,0 +1,25 @@
+--cpu Cortex-M3
+"sim800_stm32\startup_stm32f103xb.o"
+"sim800_stm32\gsm_stm32.o"
+"sim800_stm32\main.o"
+"sim800_stm32\stm32f1xx_it.o"
+"sim800_stm32\stm32f1xx_hal_msp.o"
+"sim800_stm32\stm32f1xx_hal_gpio_ex.o"
+"sim800_stm32\stm32f1xx_hal_tim.o"
+"sim800_stm32\stm32f1xx_hal_tim_ex.o"
+"sim800_stm32\stm32f1xx_hal_uart.o"
+"sim800_stm32\stm32f1xx_hal.o"
+"sim800_stm32\stm32f1xx_hal_rcc.o"
+"sim800_stm32\stm32f1xx_hal_rcc_ex.o"
+"sim800_stm32\stm32f1xx_hal_gpio.o"
+"sim800_stm32\stm32f1xx_hal_dma.o"
+"sim800_stm32\stm32f1xx_hal_cortex.o"
+"sim800_stm32\stm32f1xx_hal_pwr.o"
+"sim800_stm32\stm32f1xx_hal_flash.o"
+"sim800_stm32\stm32f1xx_hal_flash_ex.o"
+"sim800_stm32\stm32f1xx_hal_exti.o"
+"sim800_stm32\system_stm32f1xx.o"
+--library_type=microlib --strict --scatter "sim800_stm32\sim800_stm32.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "sim800_stm32.map" -o sim800_stm32\sim800_stm32.axf
