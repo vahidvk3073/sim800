@@ -40,10 +40,23 @@
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
 
+
+	#ifdef __GNUC__a
+		/* With GCC, small printf (option LD Linker->Libraries->Small printf
+			 set to 'Yes') calls __io_putchar() */
+		#define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
+		#define GETCHAR_PROTOTYPE int __io_getchar(void)
+	#else
+		#define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
+		#define GETCHAR_PROTOTYPE int fgetc(FILE *f)
+	#endif /* __GNUC__ */
+		
+		
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
 UART_HandleTypeDef huart1;
+UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
 
@@ -59,6 +72,7 @@ char number[] = "+989378936996";
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART1_UART_Init(void);
+static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -93,7 +107,7 @@ int main(void)
 
   /* USER CODE BEGIN Init */
 
-	GSM_init();
+
 	
   /* USER CODE END Init */
 
@@ -107,29 +121,45 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_USART1_UART_Init();
+  MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-
+	
+	
+	if (GSM_init())
+	{
+		green_blink(2000);
+	}
+	else 
+	{
+		yellow_blink(2000);
+	}
+	
+	
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-	yellow_blink(500);
-  while (1)
+	
+
+
+
+	while (1)
   {
-		green_blink(500);
-		HAL_Delay(500);
-		if (strstr(uart1_rx_buffer , "+CMTI:") != NULL)
-		{	
+		
+		if (strstr(uart1_rx_buffer, "+CMTI:") != NULL)
+		{		
+			GSM_read_message();
 			
-			GSM_readMessage();
 			
 			if ((strstr(receive_message, "Test SMS") != NULL) && (strstr(receive_message_number, number) != NULL))
 			{
-					GSM_sendMessage("sms received", number);
+					GSM_send_message("sms received", number);
 			}
+			
 
-			memset(receive_message , 0 , RX_BUFFER_SIZE);	
-			memset(receive_message_number , 0 , RECEIVE_NUMBER_SIZE);
+			memset(receive_message, 0, RX_BUFFER_SIZE);	
+			
+			memset(receive_message_number, 0, RECEIVE_NUMBER_SIZE);
 		}
 		
 		
@@ -213,6 +243,39 @@ static void MX_USART1_UART_Init(void)
 }
 
 /**
+  * @brief USART2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART2_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART2_Init 0 */
+
+  /* USER CODE END USART2_Init 0 */
+
+  /* USER CODE BEGIN USART2_Init 1 */
+
+  /* USER CODE END USART2_Init 1 */
+  huart2.Instance = USART2;
+  huart2.Init.BaudRate = 9600;
+  huart2.Init.WordLength = UART_WORDLENGTH_8B;
+  huart2.Init.StopBits = UART_STOPBITS_1;
+  huart2.Init.Parity = UART_PARITY_NONE;
+  huart2.Init.Mode = UART_MODE_TX_RX;
+  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART2_Init 2 */
+
+  /* USER CODE END USART2_Init 2 */
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -239,6 +302,17 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+
+PUTCHAR_PROTOTYPE
+{
+  /* Place your implementation of fputc here */
+  /* e.g. write a character to the EVAL_COM1 and Loop until the end of transmission */
+  HAL_UART_Transmit(&huart2, (uint8_t *)&ch, 1, 0xFFFF);
+
+  return ch;
+}
+
 
 /* USER CODE END 4 */
 
