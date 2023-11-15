@@ -40,18 +40,6 @@
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
 
-
-	#ifdef __GNUC__a
-		/* With GCC, small printf (option LD Linker->Libraries->Small printf
-			 set to 'Yes') calls __io_putchar() */
-		#define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
-		#define GETCHAR_PROTOTYPE int __io_getchar(void)
-	#else
-		#define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
-		#define GETCHAR_PROTOTYPE int fgetc(FILE *f)
-	#endif /* __GNUC__ */
-		
-		
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
@@ -144,7 +132,7 @@ int main(void)
 
 
 	while (1)
-  {
+	{
 		
 		if (strstr(uart1_rx_buffer, "+CMTI:") != NULL)
 		{		
@@ -303,15 +291,6 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
-
-PUTCHAR_PROTOTYPE
-{
-  /* Place your implementation of fputc here */
-  /* e.g. write a character to the EVAL_COM1 and Loop until the end of transmission */
-  HAL_UART_Transmit(&huart2, (uint8_t *)&ch, 1, 0xFFFF);
-
-  return ch;
-}
 
 
 /* USER CODE END 4 */

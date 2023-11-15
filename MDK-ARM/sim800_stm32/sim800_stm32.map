@@ -112,6 +112,14 @@ Section Cross References
     gsm_stm32.o(.text.GSM_wakeup) refers to gsm_stm32.o(.text.rx_buffer_clear) for rx_buffer_clear
     gsm_stm32.o(.ARM.exidx.text.GSM_wakeup) refers (Special) to _scanf_str.o(.text) for _scanf_string
     gsm_stm32.o(.ARM.exidx.text.GSM_wakeup) refers to gsm_stm32.o(.text.GSM_wakeup) for [Anonymous Symbol]
+    gsm_stm32.o(.text.clear_all_buffer) refers (Special) to _scanf_str.o(.text) for _scanf_string
+    gsm_stm32.o(.text.clear_all_buffer) refers to gsm_stm32.o(.text.rx_buffer_clear) for rx_buffer_clear
+    gsm_stm32.o(.text.clear_all_buffer) refers to gsm_stm32.o(.bss.receive_message) for receive_message
+    gsm_stm32.o(.text.clear_all_buffer) refers to memseta.o(.text) for __aeabi_memclr4
+    gsm_stm32.o(.text.clear_all_buffer) refers to gsm_stm32.o(.bss.receive_message_number) for receive_message_number
+    gsm_stm32.o(.text.clear_all_buffer) refers to gsm_stm32.o(.bss.receive_message_date) for receive_message_date
+    gsm_stm32.o(.ARM.exidx.text.clear_all_buffer) refers (Special) to _scanf_str.o(.text) for _scanf_string
+    gsm_stm32.o(.ARM.exidx.text.clear_all_buffer) refers to gsm_stm32.o(.text.clear_all_buffer) for [Anonymous Symbol]
     gsm_stm32.o(.text.green_blink) refers (Special) to _scanf_str.o(.text) for _scanf_string
     gsm_stm32.o(.text.green_blink) refers to stm32f1xx_hal_gpio.o(.text.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
     gsm_stm32.o(.text.green_blink) refers to stm32f1xx_hal.o(.text.HAL_Delay) for HAL_Delay
@@ -167,9 +175,6 @@ Section Cross References
     main.o(.text.MX_USART2_UART_Init) refers to main.o(.text.Error_Handler) for Error_Handler
     main.o(.ARM.exidx.text.MX_USART2_UART_Init) refers to main.o(.text.MX_USART2_UART_Init) for [Anonymous Symbol]
     main.o(.ARM.exidx.text.Error_Handler) refers to main.o(.text.Error_Handler) for [Anonymous Symbol]
-    main.o(.text.fputc) refers to main.o(.bss.huart2) for huart2
-    main.o(.text.fputc) refers to stm32f1xx_hal_uart.o(.text.HAL_UART_Transmit) for HAL_UART_Transmit
-    main.o(.ARM.exidx.text.fputc) refers to main.o(.text.fputc) for [Anonymous Symbol]
     stm32f1xx_it.o(.ARM.exidx.text.NMI_Handler) refers to stm32f1xx_it.o(.text.NMI_Handler) for [Anonymous Symbol]
     stm32f1xx_it.o(.ARM.exidx.text.HardFault_Handler) refers to stm32f1xx_it.o(.text.HardFault_Handler) for [Anonymous Symbol]
     stm32f1xx_it.o(.ARM.exidx.text.MemManage_Handler) refers to stm32f1xx_it.o(.text.MemManage_Handler) for [Anonymous Symbol]
@@ -609,54 +614,54 @@ Section Cross References
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
     printfb.o(i.__0fprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
-    printfb.o(i.__0fprintf$bare) refers to main.o(.text.fputc) for fputc
+    printfb.o(i.__0fprintf$bare) refers to fputc.o(i.fputc) for fputc
     printfb.o(i.__0printf$bare) refers to printfb.o(i._printf_core) for _printf_core
-    printfb.o(i.__0printf$bare) refers to main.o(.text.fputc) for fputc
+    printfb.o(i.__0printf$bare) refers to fputc.o(i.fputc) for fputc
     printfb.o(i.__0printf$bare) refers to stdout.o(.data) for __stdout
     printfb.o(i.__0snprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
     printfb.o(i.__0snprintf$bare) refers to printfb.o(i._snputc) for _snputc
     printfb.o(i.__0sprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
     printfb.o(i.__0sprintf$bare) refers to printfb.o(i._sputc) for _sputc
     printfb.o(i.__0vfprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
-    printfb.o(i.__0vfprintf$bare) refers to main.o(.text.fputc) for fputc
+    printfb.o(i.__0vfprintf$bare) refers to fputc.o(i.fputc) for fputc
     printfb.o(i.__0vprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
-    printfb.o(i.__0vprintf$bare) refers to main.o(.text.fputc) for fputc
+    printfb.o(i.__0vprintf$bare) refers to fputc.o(i.fputc) for fputc
     printfb.o(i.__0vprintf$bare) refers to stdout.o(.data) for __stdout
     printfb.o(i.__0vsnprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
     printfb.o(i.__0vsnprintf$bare) refers to printfb.o(i._snputc) for _snputc
     printfb.o(i.__0vsprintf$bare) refers to printfb.o(i._printf_core) for _printf_core
     printfb.o(i.__0vsprintf$bare) refers to printfb.o(i._sputc) for _sputc
     printf0.o(i.__0fprintf$0) refers to printf0.o(i._printf_core) for _printf_core
-    printf0.o(i.__0fprintf$0) refers to main.o(.text.fputc) for fputc
+    printf0.o(i.__0fprintf$0) refers to fputc.o(i.fputc) for fputc
     printf0.o(i.__0printf$0) refers to printf0.o(i._printf_core) for _printf_core
-    printf0.o(i.__0printf$0) refers to main.o(.text.fputc) for fputc
+    printf0.o(i.__0printf$0) refers to fputc.o(i.fputc) for fputc
     printf0.o(i.__0printf$0) refers to stdout.o(.data) for __stdout
     printf0.o(i.__0snprintf$0) refers to printf0.o(i._printf_core) for _printf_core
     printf0.o(i.__0snprintf$0) refers to printf0.o(i._snputc) for _snputc
     printf0.o(i.__0sprintf$0) refers to printf0.o(i._printf_core) for _printf_core
     printf0.o(i.__0sprintf$0) refers to printf0.o(i._sputc) for _sputc
     printf0.o(i.__0vfprintf$0) refers to printf0.o(i._printf_core) for _printf_core
-    printf0.o(i.__0vfprintf$0) refers to main.o(.text.fputc) for fputc
+    printf0.o(i.__0vfprintf$0) refers to fputc.o(i.fputc) for fputc
     printf0.o(i.__0vprintf$0) refers to printf0.o(i._printf_core) for _printf_core
-    printf0.o(i.__0vprintf$0) refers to main.o(.text.fputc) for fputc
+    printf0.o(i.__0vprintf$0) refers to fputc.o(i.fputc) for fputc
     printf0.o(i.__0vprintf$0) refers to stdout.o(.data) for __stdout
     printf0.o(i.__0vsnprintf$0) refers to printf0.o(i._printf_core) for _printf_core
     printf0.o(i.__0vsnprintf$0) refers to printf0.o(i._snputc) for _snputc
     printf0.o(i.__0vsprintf$0) refers to printf0.o(i._printf_core) for _printf_core
     printf0.o(i.__0vsprintf$0) refers to printf0.o(i._sputc) for _sputc
     printf1.o(i.__0fprintf$1) refers to printf1.o(i._printf_core) for _printf_core
-    printf1.o(i.__0fprintf$1) refers to main.o(.text.fputc) for fputc
+    printf1.o(i.__0fprintf$1) refers to fputc.o(i.fputc) for fputc
     printf1.o(i.__0printf$1) refers to printf1.o(i._printf_core) for _printf_core
-    printf1.o(i.__0printf$1) refers to main.o(.text.fputc) for fputc
+    printf1.o(i.__0printf$1) refers to fputc.o(i.fputc) for fputc
     printf1.o(i.__0printf$1) refers to stdout.o(.data) for __stdout
     printf1.o(i.__0snprintf$1) refers to printf1.o(i._printf_core) for _printf_core
     printf1.o(i.__0snprintf$1) refers to printf1.o(i._snputc) for _snputc
     printf1.o(i.__0sprintf$1) refers to printf1.o(i._printf_core) for _printf_core
     printf1.o(i.__0sprintf$1) refers to printf1.o(i._sputc) for _sputc
     printf1.o(i.__0vfprintf$1) refers to printf1.o(i._printf_core) for _printf_core
-    printf1.o(i.__0vfprintf$1) refers to main.o(.text.fputc) for fputc
+    printf1.o(i.__0vfprintf$1) refers to fputc.o(i.fputc) for fputc
     printf1.o(i.__0vprintf$1) refers to printf1.o(i._printf_core) for _printf_core
-    printf1.o(i.__0vprintf$1) refers to main.o(.text.fputc) for fputc
+    printf1.o(i.__0vprintf$1) refers to fputc.o(i.fputc) for fputc
     printf1.o(i.__0vprintf$1) refers to stdout.o(.data) for __stdout
     printf1.o(i.__0vsnprintf$1) refers to printf1.o(i._printf_core) for _printf_core
     printf1.o(i.__0vsnprintf$1) refers to printf1.o(i._snputc) for _snputc
@@ -664,36 +669,36 @@ Section Cross References
     printf1.o(i.__0vsprintf$1) refers to printf1.o(i._sputc) for _sputc
     printf1.o(i._printf_core) refers to uidiv.o(.text) for __aeabi_uidivmod
     printf2.o(i.__0fprintf$2) refers to printf2.o(i._printf_core) for _printf_core
-    printf2.o(i.__0fprintf$2) refers to main.o(.text.fputc) for fputc
+    printf2.o(i.__0fprintf$2) refers to fputc.o(i.fputc) for fputc
     printf2.o(i.__0printf$2) refers to printf2.o(i._printf_core) for _printf_core
-    printf2.o(i.__0printf$2) refers to main.o(.text.fputc) for fputc
+    printf2.o(i.__0printf$2) refers to fputc.o(i.fputc) for fputc
     printf2.o(i.__0printf$2) refers to stdout.o(.data) for __stdout
     printf2.o(i.__0snprintf$2) refers to printf2.o(i._printf_core) for _printf_core
     printf2.o(i.__0snprintf$2) refers to printf2.o(i._snputc) for _snputc
     printf2.o(i.__0sprintf$2) refers to printf2.o(i._printf_core) for _printf_core
     printf2.o(i.__0sprintf$2) refers to printf2.o(i._sputc) for _sputc
     printf2.o(i.__0vfprintf$2) refers to printf2.o(i._printf_core) for _printf_core
-    printf2.o(i.__0vfprintf$2) refers to main.o(.text.fputc) for fputc
+    printf2.o(i.__0vfprintf$2) refers to fputc.o(i.fputc) for fputc
     printf2.o(i.__0vprintf$2) refers to printf2.o(i._printf_core) for _printf_core
-    printf2.o(i.__0vprintf$2) refers to main.o(.text.fputc) for fputc
+    printf2.o(i.__0vprintf$2) refers to fputc.o(i.fputc) for fputc
     printf2.o(i.__0vprintf$2) refers to stdout.o(.data) for __stdout
     printf2.o(i.__0vsnprintf$2) refers to printf2.o(i._printf_core) for _printf_core
     printf2.o(i.__0vsnprintf$2) refers to printf2.o(i._snputc) for _snputc
     printf2.o(i.__0vsprintf$2) refers to printf2.o(i._printf_core) for _printf_core
     printf2.o(i.__0vsprintf$2) refers to printf2.o(i._sputc) for _sputc
     printf3.o(i.__0fprintf$3) refers to printf3.o(i._printf_core) for _printf_core
-    printf3.o(i.__0fprintf$3) refers to main.o(.text.fputc) for fputc
+    printf3.o(i.__0fprintf$3) refers to fputc.o(i.fputc) for fputc
     printf3.o(i.__0printf$3) refers to printf3.o(i._printf_core) for _printf_core
-    printf3.o(i.__0printf$3) refers to main.o(.text.fputc) for fputc
+    printf3.o(i.__0printf$3) refers to fputc.o(i.fputc) for fputc
     printf3.o(i.__0printf$3) refers to stdout.o(.data) for __stdout
     printf3.o(i.__0snprintf$3) refers to printf3.o(i._printf_core) for _printf_core
     printf3.o(i.__0snprintf$3) refers to printf3.o(i._snputc) for _snputc
     printf3.o(i.__0sprintf$3) refers to printf3.o(i._printf_core) for _printf_core
     printf3.o(i.__0sprintf$3) refers to printf3.o(i._sputc) for _sputc
     printf3.o(i.__0vfprintf$3) refers to printf3.o(i._printf_core) for _printf_core
-    printf3.o(i.__0vfprintf$3) refers to main.o(.text.fputc) for fputc
+    printf3.o(i.__0vfprintf$3) refers to fputc.o(i.fputc) for fputc
     printf3.o(i.__0vprintf$3) refers to printf3.o(i._printf_core) for _printf_core
-    printf3.o(i.__0vprintf$3) refers to main.o(.text.fputc) for fputc
+    printf3.o(i.__0vprintf$3) refers to fputc.o(i.fputc) for fputc
     printf3.o(i.__0vprintf$3) refers to stdout.o(.data) for __stdout
     printf3.o(i.__0vsnprintf$3) refers to printf3.o(i._printf_core) for _printf_core
     printf3.o(i.__0vsnprintf$3) refers to printf3.o(i._snputc) for _snputc
@@ -701,18 +706,18 @@ Section Cross References
     printf3.o(i.__0vsprintf$3) refers to printf3.o(i._sputc) for _sputc
     printf3.o(i._printf_core) refers to uidiv.o(.text) for __aeabi_uidivmod
     printf4.o(i.__0fprintf$4) refers to printf4.o(i._printf_core) for _printf_core
-    printf4.o(i.__0fprintf$4) refers to main.o(.text.fputc) for fputc
+    printf4.o(i.__0fprintf$4) refers to fputc.o(i.fputc) for fputc
     printf4.o(i.__0printf$4) refers to printf4.o(i._printf_core) for _printf_core
-    printf4.o(i.__0printf$4) refers to main.o(.text.fputc) for fputc
+    printf4.o(i.__0printf$4) refers to fputc.o(i.fputc) for fputc
     printf4.o(i.__0printf$4) refers to stdout.o(.data) for __stdout
     printf4.o(i.__0snprintf$4) refers to printf4.o(i._printf_core) for _printf_core
     printf4.o(i.__0snprintf$4) refers to printf4.o(i._snputc) for _snputc
     printf4.o(i.__0sprintf$4) refers to printf4.o(i._printf_core) for _printf_core
     printf4.o(i.__0sprintf$4) refers to printf4.o(i._sputc) for _sputc
     printf4.o(i.__0vfprintf$4) refers to printf4.o(i._printf_core) for _printf_core
-    printf4.o(i.__0vfprintf$4) refers to main.o(.text.fputc) for fputc
+    printf4.o(i.__0vfprintf$4) refers to fputc.o(i.fputc) for fputc
     printf4.o(i.__0vprintf$4) refers to printf4.o(i._printf_core) for _printf_core
-    printf4.o(i.__0vprintf$4) refers to main.o(.text.fputc) for fputc
+    printf4.o(i.__0vprintf$4) refers to fputc.o(i.fputc) for fputc
     printf4.o(i.__0vprintf$4) refers to stdout.o(.data) for __stdout
     printf4.o(i.__0vsnprintf$4) refers to printf4.o(i._printf_core) for _printf_core
     printf4.o(i.__0vsnprintf$4) refers to printf4.o(i._snputc) for _snputc
@@ -720,18 +725,18 @@ Section Cross References
     printf4.o(i.__0vsprintf$4) refers to printf4.o(i._sputc) for _sputc
     printf4.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
     printf5.o(i.__0fprintf$5) refers to printf5.o(i._printf_core) for _printf_core
-    printf5.o(i.__0fprintf$5) refers to main.o(.text.fputc) for fputc
+    printf5.o(i.__0fprintf$5) refers to fputc.o(i.fputc) for fputc
     printf5.o(i.__0printf$5) refers to printf5.o(i._printf_core) for _printf_core
-    printf5.o(i.__0printf$5) refers to main.o(.text.fputc) for fputc
+    printf5.o(i.__0printf$5) refers to fputc.o(i.fputc) for fputc
     printf5.o(i.__0printf$5) refers to stdout.o(.data) for __stdout
     printf5.o(i.__0snprintf$5) refers to printf5.o(i._printf_core) for _printf_core
     printf5.o(i.__0snprintf$5) refers to printf5.o(i._snputc) for _snputc
     printf5.o(i.__0sprintf$5) refers to printf5.o(i._printf_core) for _printf_core
     printf5.o(i.__0sprintf$5) refers to printf5.o(i._sputc) for _sputc
     printf5.o(i.__0vfprintf$5) refers to printf5.o(i._printf_core) for _printf_core
-    printf5.o(i.__0vfprintf$5) refers to main.o(.text.fputc) for fputc
+    printf5.o(i.__0vfprintf$5) refers to fputc.o(i.fputc) for fputc
     printf5.o(i.__0vprintf$5) refers to printf5.o(i._printf_core) for _printf_core
-    printf5.o(i.__0vprintf$5) refers to main.o(.text.fputc) for fputc
+    printf5.o(i.__0vprintf$5) refers to fputc.o(i.fputc) for fputc
     printf5.o(i.__0vprintf$5) refers to stdout.o(.data) for __stdout
     printf5.o(i.__0vsnprintf$5) refers to printf5.o(i._printf_core) for _printf_core
     printf5.o(i.__0vsnprintf$5) refers to printf5.o(i._snputc) for _snputc
@@ -739,18 +744,18 @@ Section Cross References
     printf5.o(i.__0vsprintf$5) refers to printf5.o(i._sputc) for _sputc
     printf5.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
     printf6.o(i.__0fprintf$6) refers to printf6.o(i._printf_core) for _printf_core
-    printf6.o(i.__0fprintf$6) refers to main.o(.text.fputc) for fputc
+    printf6.o(i.__0fprintf$6) refers to fputc.o(i.fputc) for fputc
     printf6.o(i.__0printf$6) refers to printf6.o(i._printf_core) for _printf_core
-    printf6.o(i.__0printf$6) refers to main.o(.text.fputc) for fputc
+    printf6.o(i.__0printf$6) refers to fputc.o(i.fputc) for fputc
     printf6.o(i.__0printf$6) refers to stdout.o(.data) for __stdout
     printf6.o(i.__0snprintf$6) refers to printf6.o(i._printf_core) for _printf_core
     printf6.o(i.__0snprintf$6) refers to printf6.o(i._snputc) for _snputc
     printf6.o(i.__0sprintf$6) refers to printf6.o(i._printf_core) for _printf_core
     printf6.o(i.__0sprintf$6) refers to printf6.o(i._sputc) for _sputc
     printf6.o(i.__0vfprintf$6) refers to printf6.o(i._printf_core) for _printf_core
-    printf6.o(i.__0vfprintf$6) refers to main.o(.text.fputc) for fputc
+    printf6.o(i.__0vfprintf$6) refers to fputc.o(i.fputc) for fputc
     printf6.o(i.__0vprintf$6) refers to printf6.o(i._printf_core) for _printf_core
-    printf6.o(i.__0vprintf$6) refers to main.o(.text.fputc) for fputc
+    printf6.o(i.__0vprintf$6) refers to fputc.o(i.fputc) for fputc
     printf6.o(i.__0vprintf$6) refers to stdout.o(.data) for __stdout
     printf6.o(i.__0vsnprintf$6) refers to printf6.o(i._printf_core) for _printf_core
     printf6.o(i.__0vsnprintf$6) refers to printf6.o(i._snputc) for _snputc
@@ -760,18 +765,18 @@ Section Cross References
     printf6.o(i._printf_core) refers to uidiv.o(.text) for __aeabi_uidivmod
     printf6.o(i._printf_core) refers to printf6.o(i._printf_post_padding) for _printf_post_padding
     printf7.o(i.__0fprintf$7) refers to printf7.o(i._printf_core) for _printf_core
-    printf7.o(i.__0fprintf$7) refers to main.o(.text.fputc) for fputc
+    printf7.o(i.__0fprintf$7) refers to fputc.o(i.fputc) for fputc
     printf7.o(i.__0printf$7) refers to printf7.o(i._printf_core) for _printf_core
-    printf7.o(i.__0printf$7) refers to main.o(.text.fputc) for fputc
+    printf7.o(i.__0printf$7) refers to fputc.o(i.fputc) for fputc
     printf7.o(i.__0printf$7) refers to stdout.o(.data) for __stdout
     printf7.o(i.__0snprintf$7) refers to printf7.o(i._printf_core) for _printf_core
     printf7.o(i.__0snprintf$7) refers to printf7.o(i._snputc) for _snputc
     printf7.o(i.__0sprintf$7) refers to printf7.o(i._printf_core) for _printf_core
     printf7.o(i.__0sprintf$7) refers to printf7.o(i._sputc) for _sputc
     printf7.o(i.__0vfprintf$7) refers to printf7.o(i._printf_core) for _printf_core
-    printf7.o(i.__0vfprintf$7) refers to main.o(.text.fputc) for fputc
+    printf7.o(i.__0vfprintf$7) refers to fputc.o(i.fputc) for fputc
     printf7.o(i.__0vprintf$7) refers to printf7.o(i._printf_core) for _printf_core
-    printf7.o(i.__0vprintf$7) refers to main.o(.text.fputc) for fputc
+    printf7.o(i.__0vprintf$7) refers to fputc.o(i.fputc) for fputc
     printf7.o(i.__0vprintf$7) refers to stdout.o(.data) for __stdout
     printf7.o(i.__0vsnprintf$7) refers to printf7.o(i._printf_core) for _printf_core
     printf7.o(i.__0vsnprintf$7) refers to printf7.o(i._snputc) for _snputc
@@ -781,18 +786,18 @@ Section Cross References
     printf7.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
     printf7.o(i._printf_core) refers to printf7.o(i._printf_post_padding) for _printf_post_padding
     printf8.o(i.__0fprintf$8) refers to printf8.o(i._printf_core) for _printf_core
-    printf8.o(i.__0fprintf$8) refers to main.o(.text.fputc) for fputc
+    printf8.o(i.__0fprintf$8) refers to fputc.o(i.fputc) for fputc
     printf8.o(i.__0printf$8) refers to printf8.o(i._printf_core) for _printf_core
-    printf8.o(i.__0printf$8) refers to main.o(.text.fputc) for fputc
+    printf8.o(i.__0printf$8) refers to fputc.o(i.fputc) for fputc
     printf8.o(i.__0printf$8) refers to stdout.o(.data) for __stdout
     printf8.o(i.__0snprintf$8) refers to printf8.o(i._printf_core) for _printf_core
     printf8.o(i.__0snprintf$8) refers to printf8.o(i._snputc) for _snputc
     printf8.o(i.__0sprintf$8) refers to printf8.o(i._printf_core) for _printf_core
     printf8.o(i.__0sprintf$8) refers to printf8.o(i._sputc) for _sputc
     printf8.o(i.__0vfprintf$8) refers to printf8.o(i._printf_core) for _printf_core
-    printf8.o(i.__0vfprintf$8) refers to main.o(.text.fputc) for fputc
+    printf8.o(i.__0vfprintf$8) refers to fputc.o(i.fputc) for fputc
     printf8.o(i.__0vprintf$8) refers to printf8.o(i._printf_core) for _printf_core
-    printf8.o(i.__0vprintf$8) refers to main.o(.text.fputc) for fputc
+    printf8.o(i.__0vprintf$8) refers to fputc.o(i.fputc) for fputc
     printf8.o(i.__0vprintf$8) refers to stdout.o(.data) for __stdout
     printf8.o(i.__0vsnprintf$8) refers to printf8.o(i._printf_core) for _printf_core
     printf8.o(i.__0vsnprintf$8) refers to printf8.o(i._snputc) for _snputc
@@ -803,10 +808,10 @@ Section Cross References
     printf8.o(i._printf_core) refers to printf8.o(i._printf_post_padding) for _printf_post_padding
     printfa.o(i.__0fprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
     printfa.o(i.__0fprintf) refers to printfa.o(i._printf_core) for _printf_core
-    printfa.o(i.__0fprintf) refers to main.o(.text.fputc) for fputc
+    printfa.o(i.__0fprintf) refers to fputc.o(i.fputc) for fputc
     printfa.o(i.__0printf) refers (Special) to iusefp.o(.text) for __I$use$fp
     printfa.o(i.__0printf) refers to printfa.o(i._printf_core) for _printf_core
-    printfa.o(i.__0printf) refers to main.o(.text.fputc) for fputc
+    printfa.o(i.__0printf) refers to fputc.o(i.fputc) for fputc
     printfa.o(i.__0printf) refers to stdout.o(.data) for __stdout
     printfa.o(i.__0snprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
     printfa.o(i.__0snprintf) refers to printfa.o(i._printf_core) for _printf_core
@@ -816,10 +821,10 @@ Section Cross References
     printfa.o(i.__0sprintf) refers to printfa.o(i._sputc) for _sputc
     printfa.o(i.__0vfprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
     printfa.o(i.__0vfprintf) refers to printfa.o(i._printf_core) for _printf_core
-    printfa.o(i.__0vfprintf) refers to main.o(.text.fputc) for fputc
+    printfa.o(i.__0vfprintf) refers to fputc.o(i.fputc) for fputc
     printfa.o(i.__0vprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
     printfa.o(i.__0vprintf) refers to printfa.o(i._printf_core) for _printf_core
-    printfa.o(i.__0vprintf) refers to main.o(.text.fputc) for fputc
+    printfa.o(i.__0vprintf) refers to fputc.o(i.fputc) for fputc
     printfa.o(i.__0vprintf) refers to stdout.o(.data) for __stdout
     printfa.o(i.__0vsnprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
     printfa.o(i.__0vsnprintf) refers to printfa.o(i._printf_core) for _printf_core
@@ -853,6 +858,10 @@ Section Cross References
     entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
     entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(.text.main) for main
     entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(.text.main) for main
+    fputc.o(i.fputc) refers (Special) to iusesemip.o(.text) for __I$use$semihosting$fputc
+    fputc.o(i.fputc) refers (Special) to semi.o(.text) for __semihosting_library_function
+    fputc_h.o(i._fputc$hlt) refers (Special) to iusesemip.o(.text) for __I$use$semihosting$fputc
+    fputc_h.o(i._fputc$hlt) refers (Special) to semi.o(.text) for __semihosting_library_function
     uldiv.o(.text) refers to llushr.o(.text) for __aeabi_llsr
     uldiv.o(.text) refers to llshl.o(.text) for __aeabi_llsl
     scanf_char.o(.text) refers to _scanf.o(.text) for __vfscanf
@@ -900,6 +909,8 @@ Removing Unused input sections from the image.
     Removing gsm_stm32.o(.ARM.exidx.text.GSM_go_sleep), (8 bytes).
     Removing gsm_stm32.o(.text.GSM_wakeup), (68 bytes).
     Removing gsm_stm32.o(.ARM.exidx.text.GSM_wakeup), (8 bytes).
+    Removing gsm_stm32.o(.text.clear_all_buffer), (72 bytes).
+    Removing gsm_stm32.o(.ARM.exidx.text.clear_all_buffer), (8 bytes).
     Removing gsm_stm32.o(.ARM.exidx.text.green_blink), (8 bytes).
     Removing gsm_stm32.o(.ARM.exidx.text.yellow_blink), (8 bytes).
     Removing gsm_stm32.o(.bss.cmp_index), (1 bytes).
@@ -911,8 +922,6 @@ Removing Unused input sections from the image.
     Removing main.o(.ARM.exidx.text.MX_USART1_UART_Init), (8 bytes).
     Removing main.o(.ARM.exidx.text.MX_USART2_UART_Init), (8 bytes).
     Removing main.o(.ARM.exidx.text.Error_Handler), (8 bytes).
-    Removing main.o(.text.fputc), (32 bytes).
-    Removing main.o(.ARM.exidx.text.fputc), (8 bytes).
     Removing main.o(.ARM.use_no_argv), (4 bytes).
     Removing stm32f1xx_it.o(.text), (0 bytes).
     Removing stm32f1xx_it.o(.ARM.exidx.text.NMI_Handler), (8 bytes).
@@ -1345,7 +1354,7 @@ Removing Unused input sections from the image.
     Removing cdrcmple.o(.text), (48 bytes).
     Removing depilogue.o(.text), (186 bytes).
 
-462 unused section(s) (total 15001 bytes) removed from the image.
+462 unused section(s) (total 15041 bytes) removed from the image.
 
 ==============================================================================
 
@@ -1388,12 +1397,16 @@ Image Symbol Table
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
     ../clib/microlib/printf/stubs.s          0x00000000   Number         0  printfstubs.o ABSOLUTE
+    ../clib/microlib/stdio/fputc.c           0x00000000   Number         0  fputc.o ABSOLUTE
+    ../clib/microlib/stdio/fputc.c           0x00000000   Number         0  fputc_h.o ABSOLUTE
+    ../clib/microlib/stdio/semi.s            0x00000000   Number         0  semi.o ABSOLUTE
     ../clib/microlib/stdio/streams.c         0x00000000   Number         0  stdout.o ABSOLUTE
     ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
     ../clib/microlib/string/strcpy.c         0x00000000   Number         0  strcpy.o ABSOLUTE
     ../clib/microlib/string/strlen.c         0x00000000   Number         0  strlen.o ABSOLUTE
     ../clib/microlib/string/strstr.c         0x00000000   Number         0  strstr.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
+    ../clib/microlib/stubs.s                 0x00000000   Number         0  iusesemip.o ABSOLUTE
     ../clib/scanf.c                          0x00000000   Number         0  __0sscanf.o ABSOLUTE
     ../clib/scanf.c                          0x00000000   Number         0  _scanf_str.o ABSOLUTE
     ../clib/scanf.c                          0x00000000   Number         0  scanf_char.o ABSOLUTE
@@ -1764,11 +1777,11 @@ Image Symbol Table
     huart2                                   0x20000060   Data          72  main.o(.bss.huart2)
     receive_message                          0x200000a8   Data         100  gsm_stm32.o(.bss.receive_message)
     receive_message_date                     0x2000010c   Data          30  gsm_stm32.o(.bss.receive_message_date)
-    receive_message_number                   0x2000012a   Data          30  gsm_stm32.o(.bss.receive_message_number)
-    uart1_rx_buffer                          0x20000148   Data         100  gsm_stm32.o(.bss.uart1_rx_buffer)
-    uart1_rx_index                           0x200001ac   Data           1  gsm_stm32.o(.bss.uart1_rx_index)
-    uart1_rx_temp                            0x200001ad   Data           1  gsm_stm32.o(.bss.uart1_rx_temp)
-    uwTick                                   0x200001b0   Data           4  stm32f1xx_hal.o(.bss.uwTick)
+    receive_message_number                   0x2000012c   Data          30  gsm_stm32.o(.bss.receive_message_number)
+    uart1_rx_buffer                          0x2000014c   Data         100  gsm_stm32.o(.bss.uart1_rx_buffer)
+    uart1_rx_index                           0x200001b0   Data           1  gsm_stm32.o(.bss.uart1_rx_index)
+    uart1_rx_temp                            0x200001b1   Data           1  gsm_stm32.o(.bss.uart1_rx_temp)
+    uwTick                                   0x200001b4   Data           4  stm32f1xx_hal.o(.bss.uwTick)
     __initial_sp                             0x200005b8   Data           0  startup_stm32f103xb.o(STACK)
 
 
@@ -1802,19 +1815,19 @@ Memory Map of the image
     0x0800017a   0x0800017a   0x00000012   Code   RO          679    .text               mc_w.l(strcpy.o)
     0x0800018c   0x0800018c   0x00000038   Code   RO          942    .text               mc_w.l(__0sscanf.o)
     0x080001c4   0x080001c4   0x000000e0   Code   RO          944    .text               mc_w.l(_scanf_str.o)
-    0x080002a4   0x080002a4   0x0000002c   Code   RO          970    .text               mc_w.l(uidiv.o)
-    0x080002d0   0x080002d0   0x00000028   Code   RO          974    .text               mc_w.l(scanf_char.o)
-    0x080002f8   0x080002f8   0x00000040   Code   RO          976    .text               mc_w.l(_sgetc.o)
-    0x08000338   0x08000338   0x00000024   Code   RO          989    .text               mc_w.l(init.o)
-    0x0800035c   0x0800035c   0x0000000a   Code   RO          997    .text               mc_w.l(isspace_c.o)
+    0x080002a4   0x080002a4   0x0000002c   Code   RO          974    .text               mc_w.l(uidiv.o)
+    0x080002d0   0x080002d0   0x00000028   Code   RO          978    .text               mc_w.l(scanf_char.o)
+    0x080002f8   0x080002f8   0x00000040   Code   RO          980    .text               mc_w.l(_sgetc.o)
+    0x08000338   0x08000338   0x00000024   Code   RO          993    .text               mc_w.l(init.o)
+    0x0800035c   0x0800035c   0x0000000a   Code   RO         1002    .text               mc_w.l(isspace_c.o)
     0x08000366   0x08000366   0x00000002   PAD
-    0x08000368   0x08000368   0x0000032c   Code   RO          999    .text               mc_w.l(_scanf.o)
-    0x08000694   0x08000694   0x00000028   Code   RO         1003    .text               mc_w.l(ctype_c.o)
+    0x08000368   0x08000368   0x0000032c   Code   RO         1004    .text               mc_w.l(_scanf.o)
+    0x08000694   0x08000694   0x00000028   Code   RO         1009    .text               mc_w.l(ctype_c.o)
     0x080006bc   0x080006bc   0x00000002   Code   RO           89    .text.BusFault_Handler  stm32f1xx_it.o
     0x080006be   0x080006be   0x00000002   PAD
     0x080006c0   0x080006c0   0x00000002   Code   RO           95    .text.DebugMon_Handler  stm32f1xx_it.o
     0x080006c2   0x080006c2   0x00000002   PAD
-    0x080006c4   0x080006c4   0x0000000a   Code   RO           67    .text.Error_Handler  main.o
+    0x080006c4   0x080006c4   0x0000000a   Code   RO           69    .text.Error_Handler  main.o
     0x080006ce   0x080006ce   0x00000002   PAD
     0x080006d0   0x080006d0   0x000000c4   Code   RO           11    .text.GSM_init      gsm_stm32.o
     0x08000794   0x08000794   0x00000026   Code   RO           21    .text.GSM_message_delete  gsm_stm32.o
@@ -1861,16 +1874,16 @@ Memory Map of the image
     0x0800161e   0x0800161e   0x00000002   PAD
     0x08001620   0x08001620   0x0000002a   Code   RO          164    .text.HAL_UART_Receive_IT  stm32f1xx_hal_uart.o
     0x0800164a   0x0800164a   0x00000002   PAD
-    0x0800164c   0x0800164c   0x0000001a   Code   RO           55    .text.HAL_UART_RxCpltCallback  main.o
+    0x0800164c   0x0800164c   0x0000001a   Code   RO           57    .text.HAL_UART_RxCpltCallback  main.o
     0x08001666   0x08001666   0x00000002   PAD
     0x08001668   0x08001668   0x000000ac   Code   RO          156    .text.HAL_UART_Transmit  stm32f1xx_hal_uart.o
     0x08001714   0x08001714   0x00000002   Code   RO          238    .text.HAL_UART_TxCpltCallback  stm32f1xx_hal_uart.o
     0x08001716   0x08001716   0x00000002   PAD
     0x08001718   0x08001718   0x00000002   Code   RO           85    .text.HardFault_Handler  stm32f1xx_it.o
     0x0800171a   0x0800171a   0x00000002   PAD
-    0x0800171c   0x0800171c   0x00000078   Code   RO           61    .text.MX_GPIO_Init  main.o
-    0x08001794   0x08001794   0x00000038   Code   RO           63    .text.MX_USART1_UART_Init  main.o
-    0x080017cc   0x080017cc   0x00000038   Code   RO           65    .text.MX_USART2_UART_Init  main.o
+    0x0800171c   0x0800171c   0x00000078   Code   RO           63    .text.MX_GPIO_Init  main.o
+    0x08001794   0x08001794   0x00000038   Code   RO           65    .text.MX_USART1_UART_Init  main.o
+    0x080017cc   0x080017cc   0x00000038   Code   RO           67    .text.MX_USART2_UART_Init  main.o
     0x08001804   0x08001804   0x00000002   Code   RO           87    .text.MemManage_Handler  stm32f1xx_it.o
     0x08001806   0x08001806   0x00000002   PAD
     0x08001808   0x08001808   0x00000002   Code   RO           83    .text.NMI_Handler   stm32f1xx_it.o
@@ -1884,7 +1897,7 @@ Memory Map of the image
     0x0800186c   0x0800186c   0x0000002e   Code   RO          469    .text.SysTick_Config  stm32f1xx_hal_cortex.o
     0x0800189a   0x0800189a   0x00000002   PAD
     0x0800189c   0x0800189c   0x00000008   Code   RO           99    .text.SysTick_Handler  stm32f1xx_it.o
-    0x080018a4   0x080018a4   0x00000058   Code   RO           59    .text.SystemClock_Config  main.o
+    0x080018a4   0x080018a4   0x00000058   Code   RO           61    .text.SystemClock_Config  main.o
     0x080018fc   0x080018fc   0x00000002   Code   RO          656    .text.SystemInit    system_stm32f1xx.o
     0x080018fe   0x080018fe   0x00000002   PAD
     0x08001900   0x08001900   0x00000010   Code   RO          228    .text.UART_DMAAbortOnError  stm32f1xx_hal_uart.o
@@ -1908,27 +1921,27 @@ Memory Map of the image
     0x08001c3c   0x08001c3c   0x00000020   Code   RO          445    .text.__NVIC_SetPriorityGrouping  stm32f1xx_hal_cortex.o
     0x08001c5c   0x08001c5c   0x00000046   Code   RO           29    .text.get_answer    gsm_stm32.o
     0x08001ca2   0x08001ca2   0x00000002   PAD
-    0x08001ca4   0x08001ca4   0x00000028   Code   RO           35    .text.green_blink   gsm_stm32.o
-    0x08001ccc   0x08001ccc   0x000000cc   Code   RO           57    .text.main          main.o
+    0x08001ca4   0x08001ca4   0x00000028   Code   RO           37    .text.green_blink   gsm_stm32.o
+    0x08001ccc   0x08001ccc   0x000000cc   Code   RO           59    .text.main          main.o
     0x08001d98   0x08001d98   0x0000001e   Code   RO           15    .text.rx_buffer_clear  gsm_stm32.o
     0x08001db6   0x08001db6   0x00000002   PAD
     0x08001db8   0x08001db8   0x00000048   Code   RO           13    .text.send_AT_command  gsm_stm32.o
     0x08001e00   0x08001e00   0x00000032   Code   RO           17    .text.send_string   gsm_stm32.o
     0x08001e32   0x08001e32   0x00000002   PAD
-    0x08001e34   0x08001e34   0x00000028   Code   RO           37    .text.yellow_blink  gsm_stm32.o
+    0x08001e34   0x08001e34   0x00000028   Code   RO           39    .text.yellow_blink  gsm_stm32.o
     0x08001e5c   0x08001e5c   0x00000028   Code   RO          772    i.__0sprintf$3      mc_w.l(printf3.o)
-    0x08001e84   0x08001e84   0x0000000e   Code   RO         1008    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08001e92   0x08001e92   0x00000002   Code   RO         1009    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08001e94   0x08001e94   0x0000000e   Code   RO         1010    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08001e84   0x08001e84   0x0000000e   Code   RO         1014    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08001e92   0x08001e92   0x00000002   Code   RO         1015    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08001e94   0x08001e94   0x0000000e   Code   RO         1016    i.__scatterload_zeroinit  mc_w.l(handlers.o)
     0x08001ea2   0x08001ea2   0x00000002   PAD
     0x08001ea4   0x08001ea4   0x000001b8   Code   RO          777    i._printf_core      mc_w.l(printf3.o)
     0x0800205c   0x0800205c   0x0000000a   Code   RO          779    i._sputc            mc_w.l(printf3.o)
-    0x08002066   0x08002066   0x00000040   Data   RO         1004    .constdata          mc_w.l(ctype_c.o)
+    0x08002066   0x08002066   0x00000040   Data   RO         1010    .constdata          mc_w.l(ctype_c.o)
     0x080020a6   0x080020a6   0x00000010   Data   RO          661    .rodata.AHBPrescTable  system_stm32f1xx.o
     0x080020b6   0x080020b6   0x00000008   Data   RO          662    .rodata.APBPrescTable  system_stm32f1xx.o
-    0x080020be   0x080020be   0x00000020   Data   RO           45    .rodata.str1.1      gsm_stm32.o
+    0x080020be   0x080020be   0x00000020   Data   RO           47    .rodata.str1.1      gsm_stm32.o
     0x080020de   0x080020de   0x00000002   PAD
-    0x080020e0   0x080020e0   0x00000020   Data   RO         1007    Region$$Table       anon$$obj.o
+    0x080020e0   0x080020e0   0x00000020   Data   RO         1013    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08002100, Size: 0x000005b8, Max: 0x00005000, ABSOLUTE)
@@ -1942,15 +1955,16 @@ Memory Map of the image
     0x20000014   0x08002114   0x00000004   Data   RW          322    .data.uwTickPrio    stm32f1xx_hal.o
     0x20000018        -       0x00000048   Zero   RW           72    .bss.huart1         main.o
     0x20000060        -       0x00000048   Zero   RW           73    .bss.huart2         main.o
-    0x200000a8        -       0x00000064   Zero   RW           40    .bss.receive_message  gsm_stm32.o
-    0x2000010c        -       0x0000001e   Zero   RW           42    .bss.receive_message_date  gsm_stm32.o
-    0x2000012a        -       0x0000001e   Zero   RW           41    .bss.receive_message_number  gsm_stm32.o
-    0x20000148        -       0x00000064   Zero   RW           39    .bss.uart1_rx_buffer  gsm_stm32.o
-    0x200001ac        -       0x00000001   Zero   RW           43    .bss.uart1_rx_index  gsm_stm32.o
-    0x200001ad        -       0x00000001   Zero   RW           46    .bss.uart1_rx_temp  gsm_stm32.o
-    0x200001ae   0x08002118   0x00000002   PAD
-    0x200001b0        -       0x00000004   Zero   RW          324    .bss.uwTick         stm32f1xx_hal.o
-    0x200001b4   0x08002118   0x00000004   PAD
+    0x200000a8        -       0x00000064   Zero   RW           42    .bss.receive_message  gsm_stm32.o
+    0x2000010c        -       0x0000001e   Zero   RW           44    .bss.receive_message_date  gsm_stm32.o
+    0x2000012a   0x08002118   0x00000002   PAD
+    0x2000012c        -       0x0000001e   Zero   RW           43    .bss.receive_message_number  gsm_stm32.o
+    0x2000014a   0x08002118   0x00000002   PAD
+    0x2000014c        -       0x00000064   Zero   RW           41    .bss.uart1_rx_buffer  gsm_stm32.o
+    0x200001b0        -       0x00000001   Zero   RW           45    .bss.uart1_rx_index  gsm_stm32.o
+    0x200001b1        -       0x00000001   Zero   RW           48    .bss.uart1_rx_temp  gsm_stm32.o
+    0x200001b2   0x08002118   0x00000002   PAD
+    0x200001b4        -       0x00000004   Zero   RW          324    .bss.uwTick         stm32f1xx_hal.o
     0x200001b8        -       0x00000400   Zero   RW            1    STACK               startup_stm32f103xb.o
 
 
@@ -1961,8 +1975,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       868        168         32          0        262       4765   gsm_stm32.o
-       560         36          0         14        144       5974   main.o
+       868        168         32          0        262       4884   gsm_stm32.o
+       560         36          0         14        144       5505   main.o
         36          8        236          0       1024        792   startup_stm32f103xb.o
        196          0          0          5          4       5741   stm32f1xx_hal.o
        258          0          0          0          0       8716   stm32f1xx_hal_cortex.o
@@ -1975,7 +1989,7 @@ Image component sizes
          2          0         24          4          0       1627   system_stm32f1xx.o
 
     ----------------------------------------------------------------------
-      6084        252        326         24       1440      78561   Object Totals
+      6084        252        326         24       1440      78211   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         70          0          2          1          6          0   (incl. Padding)
 
@@ -2027,8 +2041,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      8058        304        390         24       1440      79209   Grand Totals
-      8058        304        390         24       1440      79209   ELF Image Totals
+      8058        304        390         24       1440      78859   Grand Totals
+      8058        304        390         24       1440      78859   ELF Image Totals
       8058        304        390         24          0          0   ROM Totals
 
 ==============================================================================
